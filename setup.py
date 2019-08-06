@@ -7,6 +7,8 @@ The build/compilations setup
 import pip
 import logging
 import pkg_resources
+# Root directory of the project
+ROOT_DIR = "/content/IDV_MaskRCNN_Image_Segmentation"
 import mrcnn
 try:
     from setuptools import setup
