@@ -126,8 +126,8 @@ class MicrDataset(utils.Dataset):
 
             # load_mask() needs the image size to convert polygons to masks.
             # Unfortunately, VIA doesn't include it in JSON, so we must read
-            #print(objects)
-            num_ids = [n['micr'] for n in objects]
+            print(objects)
+            num_ids = [int(n['class']) for n in objects]
             # the image. This is only managable since the dataset is tiny.
             image_path = os.path.join(dataset_dir, a['filename'])
             image = skimage.io.imread(image_path)
@@ -166,7 +166,7 @@ class MicrDataset(utils.Dataset):
 
         # Return mask, and array of class IDs of each instance. Since we have
         # one class ID only, we return an array of 1s
-        num_ids = np.array(num_ids)
+        num_ids = np.array(num_ids, dtype=np.int32)
         return mask, num_ids
 
     def image_reference(self, image_id):
