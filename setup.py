@@ -7,7 +7,7 @@ The build/compilations setup
 import pip
 import logging
 import pkg_resources
-from IDV_MaskRCNN_Image_Segmentation import mrcnn
+import mrcnn
 try:
     from setuptools import setup
 except ImportError:
