@@ -117,7 +117,7 @@ class MicrDataset(utils.Dataset):
             # Get the x, y coordinaets of points of the polygons that make up
             # the outline of each object instance. There are stores in the
             # shape_attributes (see json format above)
-            polygons = [r['shape_attributes'] for r in a['regions'].values()]
+            polygons = [r['shape_attributes'] for r in (a['regions']).values()]
             objects = [s['region_attributes'] for s in a['regions'].values()]
 
             # load_mask() needs the image size to convert polygons to masks.
