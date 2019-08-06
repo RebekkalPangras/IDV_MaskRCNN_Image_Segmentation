@@ -166,7 +166,7 @@ class MicrDataset(utils.Dataset):
 
         # Return mask, and array of class IDs of each instance. Since we have
         # one class ID only, we return an array of 1s
-        num_ids = np.array(num_ids, dtype=np.int32)
+        num_ids = np.array(num_ids)
         return mask, num_ids
 
     def image_reference(self, image_id):
